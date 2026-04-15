@@ -1,7 +1,15 @@
 // 全局变量
 let selectedAPIs = JSON.parse(localStorage.getItem('selectedAPIs') || '["tyyszy","dyttzy", "bfzy", "ruyi"]'); // 默认选中资源
 let customAPIs = JSON.parse(localStorage.getItem('customAPIs') || '[]'); // 存储自定义API列表
-
+let defaultAPIs = [
+    {"name":"量子","url":"https://cj.lziapi.com/api.php/provide/vod/at/json","detail":"","isAdult":false},
+    {"name":"非凡","url":"http://ffzyapi.com/api.php/provide/vod/at/json","detail":"","isAdult":false},
+    {"name":"红牛","url":"https://www.hongniuzy2.com/api.php/provide/vod/at/json","detail":"","isAdult":false},
+    {"name":"卧龙","url":"https://wolongzy.net/api.php/provide/vod/at/json","detail":"","isAdult":false},
+    {"name":"金鹰","url":"https://jyzyapi.com/provide/vod/from/jinyingm3u8/at/json","detail":"","isAdult":false},
+    {"name":"极速","url":"https://jszyapi.com/api.php/provide/vod/from/jsm3u8/at/json","detail":"","isAdult":false}
+];
+customAPIs = [...defaultAPIs,...customAPIs];
 // 添加当前播放的集数索引
 let currentEpisodeIndex = 0;
 // 添加当前视频的所有集数
